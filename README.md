@@ -14,7 +14,6 @@ shocking mole
 ```
 
 Alternatively, run `./adjective-animal -server` to host it as an http service.
->>>>>>> 00d283dbf2e03078103f184100aaae773f30d34c
 ```
 $ curl localhost:8080
 careful elephant
