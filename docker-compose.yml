@@ -1,0 +1,16 @@
+services:
+  adjective-animal:
+    container_name: adjective-animal
+    image: ghcr.io/nocturnalbadger/adjective-animal
+    labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.adjective-animal.rule=Host(`adjective-animal.yoinks.org`)"
+        - "traefik.http.routers.adjective-animal.entrypoints=websecure"
+        - "traefik.http.routers.adjective-animal.tls=true"
+        - "traefik.http.routers.adjective-animal.tls.certresolver=letencrypt"
+        - "traefik.http.services.adjective-animal.loadbalancer.server.port=8080"
+    networks:
+      - frontend
+networks:
+  frontend:
+    name: frontend
